@@ -34,6 +34,10 @@ h1 {
     background-color: #4F709C;
     display: grid;
     grid-auto-rows: 30px;
+    grid-template-columns: 100%;
+}
+.book {
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
 .lastRow {
