@@ -32,6 +32,9 @@ h1 {
     box-sizing: border-box;
     width: 100%;
     background-color: #4F709C;
+    display: grid;
+    grid-auto-rows: 30px;
+    grid-template-columns: repeat(5, 1fr);
 }
 .lastRow {
     width: 100%;
