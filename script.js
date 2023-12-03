@@ -13,8 +13,10 @@ function Book(title, author, genre, pages, read){
 }
 
 function addToLibrary(){
-    let bookOne = new Book('The stuff', 'Hampus Farner', 'Sci-Fi', 137, true);
+    let bookOne = new Book('Krig pa stjarna bror', 'Hampus Farner', 'Sci-Fi', 137, true);
+    let bookTwo = new Book('Blablabla', 'Marica Jakobsson', 'Self help', 12532, false)
     myLibrary.push(bookOne);
+    myLibrary.push(bookTwo);
     console.log(myLibrary);
 }
 
@@ -23,7 +25,6 @@ function populateContent(){
     div.classList.add('book');
     content.appendChild(div);
     myLibrary.forEach(book => {
-        // console.log(Object.keys(book));
         Object.keys(book).forEach(key => {
             console.log(key);
             const bookDiv = document.createElement("div");
@@ -31,8 +32,5 @@ function populateContent(){
             bookDiv.innerText = book[key];
             div.appendChild(bookDiv);
         })
-        // const bookDiv = document.createElement("div");
-        // bookDiv.classList.add(Object.keys(book));
-        // div.appendChild(bookDiv);
     })
 }
