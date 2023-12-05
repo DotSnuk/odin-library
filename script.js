@@ -26,7 +26,6 @@ function Book(title, author, genre, pages, read){
     this.read = read;
 }
 
-// function to add some initial books
 
 function addToLibrary(values){
     // let bookOne = new Book('Krig pa stjarna bror', 'Hampus Farner', 'Sci-Fi', 137, true);
@@ -50,7 +49,7 @@ function updateContent(book){
     })
 }
 
-// initial
+// // function to add some initial books
 function populateContent(){
     const div = document.createElement('div');
     div.classList.add('book');
@@ -70,7 +69,11 @@ function getValues(){
     const author = document.getElementById('author').value;
     const genre = document.getElementById('genre').value;
     const pages = document.getElementById('pages').value;
-    const read = document.getElementById('read').value;
-    return [title, author, genre, pages, read];
+    const read = document.getElementById('read');
+    if (read.checked){
+        return [title, author, genre, pages, true];
+    } else {
+        return [title, author, genre, pages, false];
+    }
 }
 
