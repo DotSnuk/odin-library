@@ -4,7 +4,7 @@ const dialog = document.querySelector('dialog');
 const showButton = document.querySelector('dialog + button');
 const closeButton = document.querySelector('dialog button');
 const submitButton = document.getElementById('submit');
-populateContent();
+// populateContent();
 showButton.addEventListener('click', () => {
     dialog.showModal();
 });
@@ -14,7 +14,7 @@ closeButton.addEventListener('click', () => {
 submitButton.addEventListener('click', (event) => {
     addToLibrary(getValues());
     event.preventDefault();
-    populateContent();
+    // populateContent();
 });
 
 function Book(title, author, genre, pages, read){
@@ -34,11 +34,23 @@ function addToLibrary(values){
     const newBook = new Book(values[0],
         values[1], values[2], values[3], values[4]);
     myLibrary.push(newBook);
+    updateContent(newBook);
 }
 
 // function to update content
+function updateContent(book){
+    const div = document.createElement('div');
+    div.classList.add('book');
+    content.appendChild(div);
+    Object.keys(book).forEach(key => {
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add(key);
+        bookDiv.innerText = book[key];
+        div.appendChild(bookDiv);
+    })
+}
 
-
+// initial
 function populateContent(){
     const div = document.createElement('div');
     div.classList.add('book');
