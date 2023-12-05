@@ -26,7 +26,6 @@ function Book(title, author, genre, pages, read){
     this.read = read;
 }
 
-
 function addToLibrary(values){
     // let bookOne = new Book('Krig pa stjarna bror', 'Hampus Farner', 'Sci-Fi', 137, true);
     // let bookTwo = new Book('Blablabla', 'Marica Jakobsson', 'Self help', 12532, false);
@@ -63,6 +62,10 @@ function populateContent(){
         })
     })
 }
+//
+// make the read or not be a checkbox instead
+// and make a button beside the book to remove it from the list
+//
 
 function getValues(){
     const title = document.getElementById('title').value;
