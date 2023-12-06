@@ -23,7 +23,7 @@ h1 {
 }
 .upperRow {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 2fr) 1fr;
     width: auto;
     background-color: #D8C4B6;
     color: #213555;
@@ -38,7 +38,7 @@ h1 {
 }
 .book {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 2fr) 1fr;
 }
 .lastRow {
     width: 100%;

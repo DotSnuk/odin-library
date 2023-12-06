@@ -46,6 +46,9 @@ function updateContent(book){
         bookDiv.innerText = book[key];
         div.appendChild(bookDiv);
     })
+    const delButton = document.createElement('button');
+    delButton.classList.add('delete');
+    div.appendChild(delButton);
 }
 
 // // function to add some initial books
