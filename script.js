@@ -4,7 +4,7 @@ const dialog = document.querySelector('dialog');
 const showButton = document.querySelector('dialog + button');
 const closeButton = document.querySelector('dialog button');
 const submitButton = document.getElementById('submit');
-// populateContent();
+initialBooks();
 showButton.addEventListener('click', () => {
     dialog.showModal();
 });
@@ -35,7 +35,13 @@ function addToLibrary(values){
     updateContent(newBook);
 }
 
-// function to update content
+// adding some initial books to library
+function initialBooks(){
+    addToLibrary(['Krig på stjärna bror', 'Hampus Farner', 'Sci-Fi', 137, true]);
+    addToLibrary(['Blablabla', 'Marica Jakobsson', 'Self help', 12532, false]);
+    addToLibrary(['The Wither', 'Some polish guy', 'Fantasy', 327, true]);
+}
+
 function updateContent(book){
     const div = document.createElement('div');
     div.classList.add('book');
@@ -48,6 +54,7 @@ function updateContent(book){
     });
     const delButton = document.createElement('button');
     delButton.classList.add('delete');
+    delButton.innerText = 'Remove';
     div.appendChild(delButton);
     delButton.addEventListener('click', () => {
         deleteBook(book);
@@ -83,9 +90,8 @@ function populateContent(){
         })
     })
 }
-//
+
 // make the read or not be a checkbox instead
-// and make a button beside the book to remove it from the list
 //
 
 function getValues(){
