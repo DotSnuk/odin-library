@@ -45,13 +45,31 @@ function updateContent(book){
         bookDiv.classList.add(key);
         bookDiv.innerText = book[key];
         div.appendChild(bookDiv);
-    })
+    });
     const delButton = document.createElement('button');
     delButton.classList.add('delete');
     div.appendChild(delButton);
+    delButton.addEventListener('click', () => {
+        deleteBook(book);
+    });
+    console.log(myLibrary);
 }
 
-// // function to add some initial books
+function deleteBook(book){
+    // removes book from mylibrary array
+    // then removes the bookdivs and repopulates the content with new updated array
+    myLibrary.splice(myLibrary.indexOf(book), 1);
+    const content = document.querySelector('.content');
+    const bookDiv = document.querySelectorAll('.book');
+    bookDiv.forEach(book => {
+        content.removeChild(book);
+    });
+    myLibrary.forEach(book => {
+        updateContent(book);
+    });
+}
+
+// function to populate after book deleted
 function populateContent(){
     const div = document.createElement('div');
     div.classList.add('book');
