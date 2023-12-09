@@ -4,6 +4,7 @@ const dialog = document.querySelector('dialog');
 const showButton = document.querySelector('dialog + button');
 const closeButton = document.querySelector('dialog button');
 const submitButton = document.getElementById('submit');
+const logButton = document.getElementById('log');
 initialBooks();
 showButton.addEventListener('click', () => {
     dialog.showModal();
@@ -14,8 +15,10 @@ closeButton.addEventListener('click', () => {
 submitButton.addEventListener('click', (event) => {
     addToLibrary(getValues());
     event.preventDefault();
-    // populateContent();
 });
+logButton.addEventListener('click', () => {
+    console.log(myLibrary);
+})
 
 function Book(title, author, genre, pages, read){
     // constructor
@@ -47,10 +50,25 @@ function updateContent(book){
     div.classList.add('book');
     content.appendChild(div);
     Object.keys(book).forEach(key => {
-        const bookDiv = document.createElement('div');
-        bookDiv.classList.add(key);
-        bookDiv.innerText = book[key];
-        div.appendChild(bookDiv);
+        if (key === 'read'){
+            const checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.classList.add(key);
+            if (book[key]){
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+            checkbox.addEventListener('click', () => {
+                updateRead(this.book);
+            })
+            div.appendChild(checkbox);
+        } else {
+            const bookDiv = document.createElement('div');
+            bookDiv.classList.add(key);
+            bookDiv.innerText = book[key];
+            div.appendChild(bookDiv);
+        }
     });
     const delButton = document.createElement('button');
     delButton.classList.add('delete');
@@ -59,7 +77,12 @@ function updateContent(book){
     delButton.addEventListener('click', () => {
         deleteBook(book);
     });
-    console.log(myLibrary);
+    // console.log(myLibrary);
+}
+
+function updateRead(book){
+    // does this work to invert?
+    this.book.read = false;
 }
 
 function deleteBook(book){
@@ -76,23 +99,22 @@ function deleteBook(book){
     });
 }
 
-// function to populate after book deleted
-function populateContent(){
-    const div = document.createElement('div');
-    div.classList.add('book');
-    content.appendChild(div);
-    myLibrary.forEach(book => {
-        Object.keys(book).forEach(key => {
-            const bookDiv = document.createElement("div");
-            bookDiv.classList.add(key);
-            bookDiv.innerText = book[key];
-            div.appendChild(bookDiv);
-        })
-    })
-}
+// // function to populate after book deleted
+// function populateContent(){
+//     const div = document.createElement('div');
+//     div.classList.add('book');
+//     content.appendChild(div);
+//     myLibrary.forEach(book => {
+//         Object.keys(book).forEach(key => {
+//             const bookDiv = document.createElement("div");
+//             bookDiv.classList.add(key);
+//             bookDiv.innerText = book[key];
+//             div.appendChild(bookDiv);
+//         })
+//     })
+// }
 
 // make the read or not be a checkbox instead
-//
 
 function getValues(){
     const title = document.getElementById('title').value;
