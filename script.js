@@ -60,7 +60,7 @@ function updateContent(book){
                 checkbox.checked = false;
             }
             checkbox.addEventListener('click', () => {
-                updateRead(this.book);
+                updateRead(book);
             })
             div.appendChild(checkbox);
         } else {
@@ -82,7 +82,7 @@ function updateContent(book){
 
 function updateRead(book){
     // does this work to invert?
-    this.book.read = false;
+    book.read = !book.read;
 }
 
 function deleteBook(book){
