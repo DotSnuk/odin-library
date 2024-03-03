@@ -1,6 +1,8 @@
 const myLibrary = [];
 const content = document.querySelector('.content');
 const dialog = document.querySelector('dialog');
+const form = document.querySelector('form');
+const inputFields = document.querySelectorAll('form > fieldset > input');
 const showButton = document.querySelector('dialog + button');
 const closeButton = document.querySelector('dialog button');
 const submitButton = document.getElementById('submit');
@@ -8,13 +10,30 @@ const logButton = document.getElementById('log');
 showButton.addEventListener('click', () => {
   dialog.showModal();
 });
-closeButton.addEventListener('click', () => {
-  dialog.close();
+// closeButton.addEventListener('click', () => {
+//   dialog.close();
+// });
+form.addEventListener('submit', event => {
+  inputFields.forEach(input => {
+    input.classList.add('submitted');
+  });
+  if (!form.checkValidity()) {
+    event.preventDefault();
+  } else {
+    addToLibrary(getValues());
+    event.preventDefault();
+    dialog.close();
+  }
+  // addToLibrary(getValues());
+  // event.preventDefault();
+  // dialog.close();
 });
-submitButton.addEventListener('click', event => {
-  addToLibrary(getValues());
-  event.preventDefault();
-});
+// submitButton.addEventListener('click', event => {
+//   console.log(form.checkValidity());
+//   event.preventDefault();
+//   // addToLibrary(getValues());
+//   // event.preventDefault();
+// });
 logButton.addEventListener('click', () => {
   console.log(myLibrary);
 });

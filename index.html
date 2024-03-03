@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin's Library</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Library</h1>
-        <div class="upperRow">
-            <div class="title">Title</div>
-            <div class="author">Author</div>
-            <div class="genre">Genre</div>
-            <div class="pages">Pages</div>
-            <div class="read">Read?</div>
-        </div>
-        <div class="content">
-            
-        </div>
-        <div class="lastRow">
-            <dialog>
-                <form>
-                    <fieldset>
-                        <label for="title">Title *</label>
-                        <input type="text" id="title" required>
-                    </fieldset>
-                    <fieldset>
-                        <label for="author">Author *</label>
-                        <input type="text" id="author" required>
-                    </fieldset>
-                    <fieldset>
-                        <label for="genre">Genre</label>
-                        <select name="genre" id="genre">
-                            <option value="novel">Novel</option>
-                            <option value="scifi">Science fiction</option>
-                            <option value="self">Self help</option>
-                            <option value="fantasy">Fantasy</option>
-                            <option value="short">Short story</option>
-                            <option value="bio">Biogrophy</option>
-                            <option value="study">Study</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <label for="pages">Pages</label>
-                        <input type="text" id="pages">
-                    </fieldset>
-                    <fieldset>
-                        <label for="read">Have you read it?</label>
-                        <input type="checkbox" name="read" id="read">
-                    </fieldset>
-                    <button type="submit" id="submit">Submit</button>
-                </form>
-            </dialog>
-            <button>Show the dialog</button>
-            <button id="log">Log books in console</button>
-        </div>
+      <h1>Library</h1>
+      <div class="upperRow">
+        <div class="title">Title</div>
+        <div class="author">Author</div>
+        <div class="genre">Genre</div>
+        <div class="pages">Pages</div>
+        <div class="read">Read?</div>
+      </div>
+      <div class="content"></div>
+      <div class="lastRow">
+        <dialog>
+          <form novalidate>
+            <fieldset>
+              <label for="title">Title *</label>
+              <input type="text" id="title" required />
+            </fieldset>
+            <fieldset>
+              <label for="author">Author *</label>
+              <input type="text" id="author" required />
+            </fieldset>
+            <fieldset>
+              <label for="genre">Genre</label>
+              <select name="genre" id="genre">
+                <option value="novel">Novel</option>
+                <option value="scifi">Science fiction</option>
+                <option value="self">Self help</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="short">Short story</option>
+                <option value="bio">Biogrophy</option>
+                <option value="study">Study</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <label for="pages">Pages</label>
+              <input type="text" id="pages" />
+            </fieldset>
+            <fieldset>
+              <label for="read">Have you read it?</label>
+              <input type="checkbox" name="read" id="read" />
+            </fieldset>
+            <button type="submit" id="submit">Submit</button>
+          </form>
+        </dialog>
+        <button>Show the dialog</button>
+        <button id="log">Log books in console</button>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

@@ -1,58 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-html, body {
-    
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-color: #F5EFE7;
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: #f5efe7;
 }
 h1 {
-    text-align: center;
+  text-align: center;
 }
 .container {
-    margin: 0px auto;
-    box-sizing: border-box;
-    display: grid; 
-    justify-content: center;
-    grid-template-rows: 150px 50px auto 150px;
-    grid-template-columns: 100%;
-    height: 100%;
-    width: 80%;
+  margin: 0px auto;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 150px 50px auto 150px;
+  grid-template-columns: 100%;
+  height: 100%;
+  width: 80%;
 }
 .upperRow {
-    display: grid;
-    grid-template-columns: repeat(5, 2fr) 1fr;
-    width: auto;
-    background-color: #D8C4B6;
-    color: #213555;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr) 1fr;
+  width: auto;
+  background-color: #d8c4b6;
+  color: #213555;
 }
 .content {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: #4F709C;
-    display: grid;
-    grid-auto-rows: 30px;
-    grid-template-columns: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #4f709c;
+  display: grid;
+  grid-auto-rows: 30px;
+  grid-template-columns: 100%;
+}
+.submitted:invalid {
+  background-color: #900;
 }
 .book {
-    display: grid;
-    grid-template-columns: repeat(5, 2fr) 1fr;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr) 1fr;
 }
 .lastRow {
-    width: 100%;
+  width: 100%;
 }
-.delete{
-    border-radius: 8px;
-    background-color: white;
+.delete {
+  border-radius: 8px;
+  background-color: white;
 }
 form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    /* the read checkbox on separate row */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  /* the read checkbox on separate row */
 }
 fieldset {
-    border: none;
+  border: none;
 }
